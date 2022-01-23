@@ -5,6 +5,7 @@
   --accent-color: #2196f3;
   --first-bgcolor: #ffffff;
   --second-bgcolor: #f5f4fa;
+  --svg-base-color: #afb1b8;
   --list-space: 30px;
 }
 
@@ -113,7 +114,8 @@ img {
 }
 
 .header-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -126,6 +128,26 @@ img {
   color: var(--accent-color);
 }
 
+.header-link svg {
+  margin-right: 10px;
+  fill: var(--base-text-color);
+}
+
+.header-link[href^='mailto'] svg {
+  width: 16px;
+  height: 12px;
+}
+
+.header-link[href^='tel'] svg {
+  width: 10px;
+  height: 16px;
+}
+
+.header-link:hover svg,
+.header-link:focus svg {
+  fill: var(--accent-color);
+}
+
 /* --------------- footer --------------- */
 
 .footer {
@@ -133,7 +155,14 @@ img {
   padding-bottom: 60px;
   background-color: #2f303a;
 }
+.footer .container {
+  display: flex;
+}
 
+.footer .social-links {
+  margin-top: 12px;
+  margin-left: 70px;
+}
 .footer address {
   margin-top: 20px;
 }
@@ -159,6 +188,18 @@ img {
   color: #ffffff;
 }
 
+.social-links p {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
 /* ------------- sections styles -------------- */
 
 .section {
@@ -168,9 +209,17 @@ img {
 
 /* --------------- hero section --------------- */
 .hero {
+  margin: 0 auto;
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: #2f303a;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/bg.jpg');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
 }
 
 .hero-section-title {
@@ -238,6 +287,15 @@ img {
   flex-basis: 270px;
 }
 
+.feature-icon {
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  height: 120px;
+  width: 270px;
+
+  background-color: var(--second-bgcolor);
+  border-radius: 4px;
+}
 .feature-title {
   font-weight: 700;
   font-size: 14px;
@@ -295,6 +353,26 @@ img {
   color: var(--base-text-color);
 }
 
+.clients {
+  background-color: var(--first-bgcolor);
+}
+
+.client-logo {
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+  fill: var(--svg-base-color);
+
+  border: 1px solid var(--svg-base-color);
+  border-radius: 4px;
+}
+
+.client-logo:hover,
+.client-logo:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
 /* --------------- Portfolio style ---------------- */
 
 .projects-list {
@@ -311,11 +389,19 @@ img {
   margin-top: var(--list-space);
   margin-left: var(--list-space);
 }
+.project-link {
+  display: inline-block;
+  border: 1px solid #eeeeee;
+}
+
+.project-link:hover,
+.project-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 .project {
   padding: 20px 24px;
-  border: 1px solid #eeeeee;
-  border-top: none;
 }
 
 .project-title {
