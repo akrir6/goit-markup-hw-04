@@ -70,14 +70,22 @@ img {
   display: flex;
   justify-content: center;
 }
+
+.social-links-list .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
 .social-links-list .item + .item {
   margin-left: 10px;
 }
 
-.social-link svg {
-  width: 44px;
-  height: 44px;
-  padding: 12px;
+.social-link-icon {
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
@@ -145,19 +153,18 @@ img {
   color: var(--accent-color);
 }
 
-.header-link svg {
+.tel-icon {
   margin-right: 10px;
+  width: 10px;
+  height: 16px;
   fill: currentColor;
 }
 
-.header-link[href^='mailto'] svg {
+.email-icon {
+  margin-right: 10px;
   width: 16px;
   height: 12px;
-}
-
-.header-link[href^='tel'] svg {
-  width: 10px;
-  height: 16px;
+  fill: currentColor;
 }
 
 /* --------------- footer --------------- */
@@ -169,10 +176,10 @@ img {
 }
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer .social-links {
-  margin-top: 12px;
   margin-left: 70px;
 }
 .footer address {
@@ -214,6 +221,11 @@ img {
 
 .footer .social-link {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
@@ -310,17 +322,23 @@ img {
 .feature .item {
   flex-basis: 270px;
 }
-
-.feature-icon {
-  margin-bottom: 30px;
-  padding: 25px 100px;
+.feature-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 120px;
-  width: 270px;
 
   background-color: var(--second-bgcolor);
   border-radius: 4px;
 }
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+}
 .feature-title {
+  margin-top: 30px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -382,7 +400,13 @@ img {
 
 .team-member .social-link {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
   color: var(--svg-base-color);
+
   background-color: transparent;
   border-radius: 50%;
 }
@@ -396,23 +420,38 @@ img {
   background-color: var(--first-bgcolor);
 }
 
+.clients .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 92px;
+}
+
 .client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
   color: var(--svg-base-color);
+  border: 1px solid var(--svg-base-color);
+  border-radius: 4px;
 }
 
 .client-link:hover,
 .client-link:focus {
   color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
-.client-link svg {
-  width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-  fill: currentColor;
+.client-logo {
+  width: 106px;
+  height: 60px;
 
-  border: 1px solid currentColor;
-  border-radius: 4px;
+  fill: currentColor;
 }
 
 /* --------------- Portfolio style ---------------- */
